@@ -38,7 +38,7 @@ def get_markdown_link():
         label = input("Label: ")
         url = input("URL: ")
         return f"[{label}]({url})"
-        
+
 def get_markdown_text(markdown_type):
     text = input("Text: ")
     markdown = ""
@@ -55,6 +55,7 @@ def get_markdown_text(markdown_type):
 def save_to_file(markdown):
     with open("output.md", "w") as md:
         md.write(markdown)
+    exit()
 
 def get_markdown(formatter):
     if formatter == "header":
@@ -79,7 +80,6 @@ if __name__ == "__main__":
             print("Unknown formatting type or command")
         elif formatter == "!done":
             save_to_file(markdown)
-            break
         elif formatter == "!help":
             print("Available formatters:", " ".join(available_formatters))
             print("Special commands:", " ".join(special_commands))
